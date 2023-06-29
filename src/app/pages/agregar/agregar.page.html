@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border"  [translucent]="true">
+  <ion-toolbar>
+    
+      <ion-buttons  slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+   
+    <ion-title>Nombre de la Lista</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <ion-list>
+  <ion-item>
+    <!-- <ion-label position="floating">Nuevo Item</ion-label> -->
+    <ion-input type="text"  [(ngModel)]="nombreItem" (keyup.enter)="agregarItem()" label="Nuevo Item" labelPlacement="floating"  type="text"></ion-input>
+  </ion-item>
+ </ion-list>
+
+ <ion-list>
+  <ion-list-header>
+    <ion-label>Tareas por hacer</ion-label>
+    
+  </ion-list-header>
+  <ion-item *ngFor="let item of lista.items">
+    <!-- <ion-checkbox slot="start"></ion-checkbox> -->
+    <!-- <ion-label> Awesome Label</ion-label> -->
+    <ion-checkbox [(ngModel)]="item.completado" justify="start" labelPlacement="end">{{item.desc}}</ion-checkbox>
+
+  </ion-item>
+ </ion-list>
+
+</ion-content>
