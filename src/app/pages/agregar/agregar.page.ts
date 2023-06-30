@@ -48,7 +48,11 @@ export class AgregarPage implements OnInit {
       this.lista.terminada= false;
     }
     this.desesosService.guardarStorage();
-    
+  }
+
+  borrarItem(index:number){
+    this.lista.items.splice(index,1);
+    this.desesosService.guardarStorage();
 
   }
 

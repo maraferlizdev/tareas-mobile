@@ -3,6 +3,7 @@ import { DesesosService } from '../../services/deseos.service';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -52,8 +53,7 @@ export class Tab1Page {
       });
     
       await alert.present();
-    
-
   }
+ 
 
 }
