@@ -5,7 +5,7 @@
         <ion-back-button defaultHref="/"></ion-back-button>
       </ion-buttons>
    
-    <ion-title>Nombre de la Lista</ion-title>
+    <ion-title> {{lista.titulo}} </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -22,10 +22,10 @@
     <ion-label>Tareas por hacer</ion-label>
     
   </ion-list-header>
-  <ion-item *ngFor="let item of lista.items">
+  <ion-item *ngFor="let item of lista.items" class="animated fadeInDown">
     <!-- <ion-checkbox slot="start"></ion-checkbox> -->
     <!-- <ion-label> Awesome Label</ion-label> -->
-    <ion-checkbox [(ngModel)]="item.completado" justify="start" labelPlacement="end">{{item.desc}}</ion-checkbox>
+    <ion-checkbox [(ngModel)]="item.completado" (ionChange)="cambioCheck(item)" justify="start" labelPlacement="end">{{item.desc}}</ion-checkbox>
 
   </ion-item>
  </ion-list>
